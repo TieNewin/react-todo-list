@@ -2,9 +2,15 @@ import { useState } from 'react';
 
 const TodoList = () => {
   const [task, setTask] = useState('');
+  const listItems = [];
 
   const handleClick = (e) => {
     e.preventDefault();
+
+    listItems.push(
+        <li>{ task }</li>
+    );
+    console.log(listItems);
   }
 
   return (
@@ -19,7 +25,9 @@ const TodoList = () => {
         <button onClick={handleClick}>Add</button>
       </div>
       <div className="list">
-        <ul></ul>
+        <ul>
+          
+        </ul>
       </div>
     </div>
   );
